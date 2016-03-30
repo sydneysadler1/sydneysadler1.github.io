@@ -4,7 +4,10 @@
 
 
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-
+    <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
+    <script src="jquery.js"></script>
+    <script src="jquery-jvectormap-2.0.3.min.js"></script>
+    <script src="jquery-sf-map.js"></script>
     <style>
         body{
             background-color: White;
@@ -23,11 +26,19 @@
         }
 
 
+
+
     </style>
 </head>
 <body>
 
         <h1 id="title">Relative pH of Water in San Francisco</h1>
+        <div id="map" style="width: 800px; height: 600px"></div>
+  <script>
+    $(function(){
+      $('#map').vectorMap({map: 'map'});
+    });
+  </script>
 
 
 </body>
