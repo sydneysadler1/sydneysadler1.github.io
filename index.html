@@ -8,6 +8,23 @@
     <script src="jquery.js"></script>
     <script src="jquery-jvectormap-2.0.3.min.js"></script>
     <script src="jquery-sf-map.js"></script>
+
+    <script>
+
+    var phData = {
+      "dist1" : 7.302
+      "dist2" : 7.638,
+      "dist3" : 7.708,
+      "dist4" : 7.782,
+      "dist5" : 7.764.
+      "dist6" : 7.594,
+      "dist7" : 7.647,
+      "dist8" : 8.817,
+      "dist9" : 8.728,
+      "dist10": 7.412,
+    };
+
+    </script>
     <style>
         body{
             background-color: #505050;
@@ -31,14 +48,38 @@
 
 
     </style>
+
+
 </head>
 <body>
 
         <h1 id="title">Relative pH of Water in San Francisco</h1>
         <div id="map" style="width: 1280px; height: 800px"></div>
   <script>
+  var phData = {"dist1" : "7.302",  "dist2" : "7.638", "dist3" : "7.708",  "dist4" : "7.782",  "dist5" : "7.764",  "dist6" : "7.594",  "dist7" : "7.647","dist8" : "8.817","dist 9" : "8.728",  "dist10": "7.412",
+  };
     $(function(){
-      $('#map').vectorMap({map: 'map'});
+      $('#map').vectorMap({
+        map: 'map',
+
+
+        series: {
+     //this is the object for passing country/region data into
+     regions: [{
+       //define the range of color values
+       scale: ['#DEEBF7', '#08519C'],
+       //define the function that maps data to color range
+       normalizeFunction: 'linear',
+       //define the coloration method
+       attribute: 'fill',
+       //define the array of country data
+       values: phData
+     }]
+   },
+
+
+      });
+
     });
   </script>
 
