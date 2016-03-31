@@ -8,11 +8,7 @@ svg {
     position: absolute;
     overflow: hidden;
     touch-action: none;
-
     left: 0%;
-
-
-
 }
 
 .jvectormap-tip {
