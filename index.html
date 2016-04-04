@@ -1,35 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="jquery-jvectormap-2.0.3.css" type="text/css" media="screen"/>
     <script src="jquery.js"></script>
     <script src="jquery-jvectormap-2.0.3.min.js"></script>
     <script src="sf-map.js"></script>
-
-
-
     <style>
         body{
             background-color: #505050;
             font-family: 'Raleway', sans-serif;
         }
-
         #title{
             color: white;
             text-align: center;
             margin-top: 20px;
-            margin-bottom: 0px;
+            margin-bottom: 10px;
             font-weight: 100;
             font-size: 400%;
         }
+
+        #legend {
+    cursor: pointer;
+    display: block;
+    float: right;
+    z-index: 3;
+    position: absolute; /*newly added*/
+    left: 36%;
+     /*newly added*/
+    top: 93%;/*newly added*/
+    font-size:20%;
+    background-color: #363636;
+    width: 400px;
+    height: 50px;
+
+}
+
+#name {
+  font-size: 50%;
+  color: white;
+
+}
+
+#zero {
+  background-color: #dee7ed;
+  width:100px;
+  height:50px;
+}
+
+#twenty-five {
+  background-color: #8BA8C5;
+  width: 100px;
+  height: 50px;
+  margin-left: 100px;
+}
+
+#seventy-five {
+  background-color: #16579c;
+  width: 100px;
+  height: 50px;
+  margin-left: 100px;
+}
+
+#hundred {
+  background-color: #0d3059;
+  width: 100px;
+  height: 50px;
+  margin-left: 100px;
+}
+h2 {
+  color: white;
+  font-size: 60%;
+}
     </style>
 </head>
 <body>
         <h1 id="title">Relative pH of Water in San Francisco</h1>
         <div id="map" style="width: 1280px; height: 800px">
+        </div>
+        <div id="legend">
+          <div id="zero">
+          <div id="twenty-five">
+          <div id="seventy-five">
+          <div id="hundred"
+          </div>
+
         </div>
   <script>
   var phData = {
@@ -43,33 +98,21 @@
     "dist8" : "8.817",
     "dist9": "8.728",
     "dist10": "7.412",
-
-
-
   };
-
-
-
-
     $(function(){
       $('#map').vectorMap({
         map: 'map',
-
         series: {
           regions: [{
-
             scale: ['#B4C8DB', '#003B7A'],
             normalizeFunction: 'linear',
             attribute: 'fill',
             values:  phData
+
           }]
         },
       });
-
     })();
   </script>
-
-
-
 </body>
 </html>
