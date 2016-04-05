@@ -8,7 +8,8 @@ svg {
     position: absolute;
     overflow: hidden;
     touch-action: none;
-    left: 0%;
+    right: -2%;
+
 }
 
 .jvectormap-tip {
@@ -39,6 +40,7 @@ svg {
 .jvectormap-zoomin, .jvectormap-zoomout {
     width: 10px;
     height: 10px;
+
 }
 
 .jvectormap-zoomin {
